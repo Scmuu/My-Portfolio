@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sam</title>
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/251923197?s=400&v=4" type="image/icon type">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --cyber-orange: #ff7b00;
+            --cyber-glow: rgba(255, 140, 0, 0.6);
+        }
+
+        .card-fullname {
+            color: var(--cyber-orange) !important;
+            text-shadow: 0 0 5px var(--cyber-glow);
+        }
+
+        .card-jobtitle {
+            color: #a35001 !important; 
+            opacity: 0.9;
+        }
+
+        .card-social a {
+            transition: transform 0.2s;
+            display: inline-flex;
+            margin: 0 8px;
+            color: var(--cyber-orange);
+        }
+        .card-social a:hover {
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 5px var(--cyber-orange));
+        }
+
+        /* Stile per la scritta luminosa dell'Easter Egg */
+        #easter-egg-hint {
+            color: var(--cyber-orange);
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            margin-top: 10px;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: glitch-blink 4s infinite; /* Animazione di lampeggio casuale */
+        }
+
+        /* Animazione Glitch-Blink casuale */
+        @keyframes glitch-blink {
+            0%, 100% { opacity: 0.7; text-shadow: 0 0 2px var(--cyber-glow); }
+            5% { opacity: 1; text-shadow: 0 0 8px var(--cyber-orange), 0 0 12px var(--cyber-orange); }
+            7% { opacity: 0.2; text-shadow: none; }
+            9% { opacity: 0.8; text-shadow: 0 0 3px var(--cyber-glow); }
+            11% { opacity: 0.1; text-shadow: none; }
+            13% { opacity: 0.7; text-shadow: 0 0 2px var(--cyber-glow); }
+            80% { opacity: 0.7; text-shadow: 0 0 2px var(--cyber-glow); }
+            81% { opacity: 1; text-shadow: 0 0 8px var(--cyber-orange); }
+            82% { opacity: 0.7; text-shadow: 0 0 2px var(--cyber-glow); }
+        }
+
+        /* Stile Easter Egg Overlay */
+        #easter-egg-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 10000;
+            cursor: pointer;
+        }
+        .egg-content {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--cyber-orange);
+            font-family: 'Courier New', monospace;
+            border: 2px solid var(--cyber-orange);
+            padding: 40px;
+            box-shadow: 0 0 20px var(--cyber-orange);
+            background: rgb(210, 155, 221);
+        }
+
+        /* Typewriter & Cursore */
+        #typewriter-log {
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+        }
+
+        .cursor {
+            display: inline-block;
+            background-color: var(--cyber-orange);
+            width: 8px;
+            height: 15px;
+            margin-left: 4px;
+            animation: blink 0.8s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="stars"></div>
+        <div class="stars1"></div>
+        <div class="stars2"></div>
+    </div>
+
+    <div id="easter-egg-overlay">
+        <div class="egg-content">
+            <h1>ACCESS GRANTED</h1>
+            <p style="font-size: 2rem;">❤️ tei</p>
+            <p style="font-size: 0.8rem; opacity: 0.6;">[ Click anywhere to exit ]</p>
+        </div>
+    </div>
+
+    <div class="card" data-state="#about">
+        <div class="card-header">
+            <div class="card-cover" style="background-image: url('https://images.unsplash.com/photo-1557951959-e3e30ee937e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=680&q=80')"></div>
+            <img class="card-avatar" src="https://avatars.githubusercontent.com/u/251923197?s=400&v=4" alt="avatar"/>
+            <h1 class="card-fullname">Sam</h1>
+            <h2 class="card-jobtitle">Cybersecurity Enthusiast</h2>
+        </div>
+
+        <div class="card-main">
+            <div class="card-section is-active" id="about">
+                <div class="card-content">
+                    <div class="card-subtitle">ABOUT</div>
+                    <p class="card-desc">IT Cybersecurity Student & Rocket League Enjoyer</p>
+                </div>
+                <div class="card-social">
+                    <a href="https://github.com/Scmuu" target="_blank" title="GitHub">
+                        <svg viewBox="0 0 496 512" width="24" height="24"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"/></svg>
+                    </a>
+                    <a href="https://discordapp.com/users/448479910751633408" target="_blank" title="Discord">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/></svg>
+                    </a>
+                    <a href="https://open.spotify.com" target="_blank" title="Spotify">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.269C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/></svg>
+                    </a>
+                    <a href="https://steamcommunity.com/id/vSamu/" target="_blank" title="Steam">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M.329 10.333A8.01 8.01 0 0 0 7.99 16C12.422 16 16 12.422 16 8s-3.578-8-8.01-8C3.578 0 0 3.578 0 8a8 8 0 0 0 .329 2.333M4.88 13.68c.81.713 2.125.685 2.938-.062l.123-.117a1.57 1.57 0 0 1-1.006-.394l-.05-.046-.015-.013c-.235-.22-.345-.519-.358-.818l-1.315-.815a5.5 5.5 0 0 1-.573.428l-1.059 1.517a1.58 1.58 0 0 0 .315 1.321M3.373 12.333a1.1 1.1 0 1 1 .793-1.877L5.274 8.874a1.1 1.1 0 0 1 1.09-2.012l1.353-1.895L10 5l1.282.966L13 7.293V8.414l-1.718 1.718L10 11l-2.282.966-1.353-1.895a1.1 1.1 0 0 1-1.09 2.012l-1.902 1.583a1.1 1.1 0 0 1-.002-1.333M8 3c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2"/></svg>
+                    </a>
+                </div>
+                <div id="easter-egg-hint">> there is an easter egg hidden somewhere!</div>
+            </div>
+
+            <div class="card-section" id="experience">
+                <div class="card-content">
+                    <div class="card-subtitle">SYSTEM LOG</div>
+                    <div class="card-timeline">
+                        <div class="card-item" data-year="LOG">
+                            <div class="card-item-title">Real-time Trace</div>
+                            <div class="card-item-desc">
+                                <span id="typewriter-log"></span><span class="cursor"></span>
+                                <div style="margin-top: 10px;">
+                                    > IP_SCAN: <span id="ip-display" style="color: #d400ff; text-shadow: 0 0 5px #ff00c8;">Fetching...</span><br>
+                                    > STATUS: <span style="color: #00ff00; text-shadow: 0 0 5px #00ff00;">Online</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item" data-year="2023">
+                            <div class="card-item-title">Interest in CyberSec</div>
+                            <div class="card-item-desc">Independently interested in Linux and Security.</div>
+                        </div>
+                        <div class="card-item" data-year="2024">
+                            <div class="card-item-title">Secondary school diploma</div>
+                            <div class="card-item-desc">Electronics and Systems in Genoa.</div>
+                        </div>
+                        <div class="card-item" data-year="2025">
+                            <div class="card-item-title">Academy</div>
+                            <div class="card-item-desc">Started Academy of IT & CyberSecurity.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-section" id="contact">
+                <div class="card-content">
+                    <div class="card-subtitle">CONTACT</div>
+                    <div class="card-contact-wrapper">
+                        <div class="card-contact">Italy - Province of Genoa</div>
+                        <div class="card-contact">Discord: excentricidad.</div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <div class="card-buttons">
+            <button data-section="#about" class="is-active">ABOUT</button>
+            <button data-section="#experience">EXPERIENCE</button>
+            <button data-section="#contact">CONTACT</button>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script>
+        // IP DISCOVERY
+        fetch('https://api.ipify.org?format=json')
+            .then(r => r.json())
+            .then(d => { document.getElementById('ip-display').textContent = d.ip; })
+            .catch(() => { document.getElementById('ip-display').textContent = '127.0.0.1'; });
+
+        // TYPEWRITER
+        const logText = "> Initializing breach protocol...\n> Cracking user metadata...\n> Accessing local network... [OK]\n> Welcome, Sam.";
+        let index = 0;
+        let hasStarted = false;
+
+        function startTypewriter() {
+            const container = document.getElementById("typewriter-log");
+            if (index < logText.length) {
+                container.innerHTML += logText.charAt(index) === "\n" ? "<br>" : logText.charAt(index);
+                index++;
+                setTimeout(startTypewriter, 25);
+            }
+        }
+
+        document.querySelector('[data-section="#experience"]').addEventListener('click', () => {
+            if (!hasStarted) {
+                hasStarted = true;
+                setTimeout(startTypewriter, 400); 
+            }
+        });
+
+        // EASTER EGG (Premi 'T')
+        const overlay = document.getElementById('easter-egg-overlay');
+        document.addEventListener('keydown', (e) => {
+            if (e.key.toLowerCase() === 't') {
+                overlay.style.display = 'block';
+            } else if (overlay.style.display === 'block') {
+                overlay.style.display = 'none';
+            }
+        });
+        overlay.addEventListener('click', () => { overlay.style.display = 'none'; });
+    </script>
+</body>
+</html>
