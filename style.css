@@ -527,3 +527,30 @@ body {
         height: 800px;
     }
 }
+
+/* Rimuovi la versione precedente e usa questa */
+.cursor-trail {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 12px !important;
+    height: 12px !important;
+    background-color: #ff5e00 !important; /* Arancione acceso */
+    border-radius: 50% !important;
+    pointer-events: none !important; /* Non blocca i click */
+    z-index: 9999999 !important; /* Più alto di tutto */
+    box-shadow: 0 0 10px #ff5e00, 0 0 20px #ffae00 !important;
+    transform: translate(-50%, -50%) !important;
+    animation: trail-fade 0.6s ease-out forwards !important;
+}
+
+@keyframes trail-fade {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.2);
+        opacity: 0;
+    }
+}

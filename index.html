@@ -216,6 +216,31 @@
             if (e.key.toLowerCase() === 't') overlay.style.display = 'block';
         });
         overlay.addEventListener('click', () => overlay.style.display = 'none');
+// --- AGGIUNGI QUESTO PEZZO QUI SOTTO PER LA SCIA ---
+        document.addEventListener('mousemove', (e) => {
+            const trail = document.createElement('div');
+            Object.assign(trail.style, {
+                position: 'fixed',
+                left: e.clientX + 'px',
+                top: e.clientY + 'px',
+                width: '10px',
+                height: '10px',
+                backgroundColor: '#ff5e00',
+                borderRadius: '50%',
+                pointerEvents: 'none',
+                zIndex: '9999999',
+                boxShadow: '0 0 10px #ff5e00, 0 0 20px #ffae00',
+                transform: 'translate(-50%, -50%) scale(1)',
+                transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
+                opacity: '1'
+            });
+            document.body.appendChild(trail);
+            requestAnimationFrame(() => {
+                trail.style.transform = 'translate(-50%, -50%) scale(0.1)';
+                trail.style.opacity = '0';
+            });
+            setTimeout(() => { trail.remove(); }, 500);
+        });
     </script>
 </body>
 </html>
