@@ -209,13 +209,6 @@
                 setTimeout(startTypewriter, 50);
             }
         }
-
-        // Easter Egg "T"
-        const overlay = document.getElementById('easter-egg-overlay');
-        document.addEventListener('keydown', (e) => {
-            if (e.key.toLowerCase() === 't') overlay.style.display = 'block';
-        });
-        overlay.addEventListener('click', () => overlay.style.display = 'none');
 // --- AGGIUNGI QUESTO PEZZO QUI SOTTO PER LA SCIA ---
         document.addEventListener('mousemove', (e) => {
             const trail = document.createElement('div');
